@@ -1,0 +1,69 @@
+//-------------
+// Layout mixins
+//-------------
+
+.make-row() {
+	position: relative;
+	max-width: @row-max-default;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	.clearfix;
+
+	&.greedy {
+		max-width:none;
+	}
+
+	.row {
+		max-width: none;
+		margin-right: -(@grid-gutter-desktop / 2);
+		margin-left: -(@grid-gutter-desktop / 2);
+	}
+
+	@media (min-width: @screen-large-lower){
+		max-width: @row-max-large;
+		.row {
+			margin-right: -(@grid-gutter-large / 2);
+			margin-left: -(@grid-gutter-large / 2);
+		}
+	}
+}
+
+.make-row-content() {
+	position: relative;
+	display:block;
+	float:left;
+	min-height: 1px;
+	padding-right: (@grid-gutter-phone / 2);
+	padding-bottom: @layout-flow-vertical;
+	padding-left: (@grid-gutter-phone / 2);
+	box-sizing: border-box;
+
+	@media (min-width: @screen-large-lower) {
+		padding-right: (@grid-gutter-large / 2);
+		padding-left: (@grid-gutter-large / 2);
+	}
+}
+
+.sequential-percentage-width(@amount,@before){
+	.sequential-percentage-width(@amount,@before,@amount)
+}
+
+.sequential-percentage-width(@index,@before,@ttlAmount) when (@index > 0) {
+    .@{before}-@{index} { 
+        width: percentage(@index / @ttlAmount);
+    }
+    .sequential-percentage-width(@index - 1,@before,@ttlAmount);
+}
+.sequential-percentage-width(0,''){}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}

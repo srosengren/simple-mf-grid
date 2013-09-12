@@ -1,0 +1,25 @@
+//-------------
+// Grid
+//-------------
+
+@grid-columns: 12;
+
+@grid-gutter-large: @layout-flow-horizontal-large;
+@grid-gutter-desktop: @layout-flow-horizontal;
+@grid-gutter-tablet: @layout-flow-horizontal;
+@grid-gutter-phonetablet: @layout-flow-horizontal;
+@grid-gutter-phone: @layout-flow-horizontal;
+
+@row-max-large: (@screen-large-lower - @grid-gutter-large);
+@row-max-default: (@screen-desktop-lower - @grid-gutter-desktop);
+
+// breakpoints
+@screen-large-lower: 1200px;
+@screen-desktop-lower: 980px;
+@screen-tablet-lower: 768px;
+@screen-phonetablet-lower: 480px;
+
+@layout-flow-horizontal: 20px;
+@layout-flow-horizontal-large: 30px;
+@layout-flow-vertical: 20px;
+

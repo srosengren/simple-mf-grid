@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>smfgrid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/less/smfgrid.css">
+    <style>
+      .col-content {
+        background-color: #ccc;
+        min-height: 20px;
+      }
+
+      .orange {
+        color: #ef8400;
+      }
+
+      .ruby {
+        color: #d1007b;
+      }
+
+      .purple {
+        color: #722382;
+      }
+
+      @media (min-width: 480px){
+        .col-pt-1 > .col-content,.col-pt-11 > .col-content, .col-pt-3 > .col-content, .col-pt-12 > .col-content, .col-pt-9 > .col-content {
+          background-color: #ef8400;
+        }
+      }
+
+      @media (min-width: 768px){
+        .col-t-6 > .col-content,.col-t-2 > .col-content, .col-t-10 > .col-content, .col-t-5 > .col-content, .col-t-7 > .col-content {
+          background-color: #d1007b;
+        }
+      }
+
+      @media (min-width: 980px){
+        .col-d-9 > .col-content,.col-d-3 > .col-content, .col-d-2 > .col-content, .col-d-10 > .col-content {
+          background-color: #722382;
+        }
+      } 
+    </style>
+  </head>
+  <body>
+    <div class="row greedy">
+      <div class="col-1 col-pt-11 col-t-6 col-d-9"><div class="col-content"></div></div>
+      <div class="col-11 col-pt-1 col-t-6 col-d-3"><div class="col-content"></div></div>
+      <div class="col-2"><div class="col-content"></div></div>
+      <div class="col-10"><div class="col-content"></div></div>
+      <div class="col-3 col-pt-3"><div class="col-content"></div></div>
+      <div class="col-9 col-pt-3"><div class="col-content"></div></div>
+      <div class="col-4 col-pt-3"><div class="col-content"></div></div>
+      <div class="col-8 col-pt-3"><div class="col-content"></div></div>
+      <div class="col-5 col-t-2"><div class="col-content"></div></div>
+      <div class="col-7 col-t-10"><div class="col-content"></div></div>
+      <div class="col-6 col-d-10"><div class="col-content"></div></div>
+      <div class="col-6 col-d-2"><div class="col-content"></div></div>
+      <div class="col-8"><div class="col-content"></div></div>
+      <div class="col-4"><div class="col-content"></div></div>
+      <div class="col-9"><div class="col-content"></div></div>
+      <div class="col-3"><div class="col-content"></div></div>
+      <div class="col-10 col-t-7"><div class="col-content"></div></div>
+      <div class="col-2 col-t-5"><div class="col-content"></div></div>
+      <div class="col-11 col-pt-12"><div class="col-content"></div></div>
+      <div class="col-1 col-pt-12 "><div class="col-content"></div></div>
+      <div class="col-12">
+        <h2>A heavily nested row</h2>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col-10 col-pt-6">
+            <div class="row">
+              <div class="col-6 col-pt-3"><div class="col-content"></div></div>
+              <div class="col-6 col-pt-9"><div class="col-content"></div></div>
+            </div>
+          </div>
+          <div class="col-2 col-pt-6"><div class="col-content"></div></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row">
+          <div class="col-6 col-t-5"><div class="col-content"></div></div>
+          <div class="col-6 col-t-7"><div class="col-content"></div></div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li class="orange">Overriden on phone-tablet size ( > 480px )</li>
+      <li class="ruby">Overriden on tablet size ( > 768px )</li>
+      <li class="purple">Overriden on desktop size ( > 980px )</li>
+    </ul>
+  </body>
+</html>
